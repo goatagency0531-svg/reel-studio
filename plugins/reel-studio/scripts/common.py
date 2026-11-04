@@ -134,6 +134,9 @@ def find_font(ws: Path, brand: dict, weight: str = "bold") -> str:
         if p.exists():
             return str(p)
     family = fonts.get("family", "Inter")
+    bundled = PLUGIN_ROOT / "templates" / "fonts" / ("Inter-Regular.otf" if weight == "regular" else "Inter-Bold.otf")
+    if family == "Inter" and bundled.exists():
+        return str(bundled)
     if shutil.which("fc-match"):
         out = subprocess.run(["fc-match", "-f", "%{file}", f"{family}:{weight}"], capture_output=True, text=True).stdout
         if out and Path(out).exists():

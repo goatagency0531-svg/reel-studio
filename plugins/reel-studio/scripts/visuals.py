@@ -10,7 +10,13 @@ Expected files in reels/<slug>/visuals/:
   <beat_id>.png / .jpg / .webp for visual.type == "ai_image"
   text_card beats need nothing; they are drawn from your brand colors.
 
-Manual mode (default, works with any Higgsfield plan):
+Modes (brand.json -> higgsfield.mode):
+  auto   (default) API if HIGGSFIELD_API_KEY + endpoint paths are set; otherwise reports missing
+         shots so the editor agent can generate them with a connected Higgsfield MCP server,
+         or the user/bot can drop files in.
+  api    always use the REST API.  mcp / manual: never call the API from this script.
+
+Manual / MCP fallback:
   writes visuals/SHOTLIST.md with every prompt, the length each shot needs and the exact
   filename to save it as. Generate in Higgsfield, download, drop files into visuals/.
 
@@ -206,7 +212,10 @@ def main() -> None:
                 and not find_asset(vdir, b["id"], NEEDS_FILE[b["visual"]["type"]])]
 
     missing = missing_now()
-    if missing and not a.check and brand["higgsfield"].get("mode") == "api":
+    hf = brand["higgsfield"]
+    mode = hf.get("mode", "auto")
+    api_ready = bool(os.environ.get("HIGGSFIELD_API_KEY") and hf.get("api", {}).get("text_to_image_path"))
+    if missing and not a.check and (mode == "api" or (mode == "auto" and api_ready)):
         api_generate(rd, brand, missing)
         missing = missing_now()
 
@@ -216,9 +225,10 @@ def main() -> None:
         sl = write_shotlist(rd, script, missing, beat_lengths(rd))
         if not a.check:
             set_stage(rd, "awaiting_visuals", f"{len(missing)} shots missing")
-        print(f"WAITING: {len(missing)} shot(s) missing: {', '.join(report['missing'])}")
+        print(f"MISSING_SHOTS: {', '.join(report['missing'])}")
         print(f"Shot list: {sl}")
         print("Tip: you can also render now; missing shots become branded text cards.")
+        raise SystemExit(3)
     else:
         if not a.check:
             set_stage(rd, "visuals_ready")

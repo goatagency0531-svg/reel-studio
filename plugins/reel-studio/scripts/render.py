@@ -18,7 +18,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from common import (FPS, H, W, die, duration, ff_path, find_font, hex_to_ass, load_brand, load_env,
+from common import (PLUGIN_ROOT, FPS, H, W, die, duration, ff_path, find_font, hex_to_ass, load_brand, load_env,
                     need_ffmpeg, read_json, reel_dir, run, set_stage, workspace, write_json)
 from visuals import IMAGE_EXT, VIDEO_EXT, find_asset
 
@@ -225,7 +225,9 @@ def main() -> None:
     # ---- final composite
     inputs = ["-i", str(joined), "-i", str(voice)]
     fontsdir = ws / "brand" / "fonts"
-    sub = f"ass='{ff_path(ass)}'" + (f":fontsdir='{ff_path(fontsdir)}'" if fontsdir.exists() else "")
+    if not (fontsdir.exists() and any(fontsdir.iterdir())):
+        fontsdir = PLUGIN_ROOT / "templates" / "fonts"
+    sub = f"ass='{ff_path(ass)}':fontsdir='{ff_path(fontsdir)}'"
     fc = [f"[0:v]{sub}[v0]"]
     vlast, idx = "v0", 2
     pb = style.get("progress_bar", {})

@@ -4,8 +4,17 @@
   "language": "en",
   "audience": "Who you talk to, in one sentence.",
   "offer": "What you sell or want people to do.",
-  "tone": ["direct", "warm", "no fluff"],
-  "banned_words": ["unlock", "game-changer", "delve", "elevate"],
+  "tone": [
+    "direct",
+    "warm",
+    "no fluff"
+  ],
+  "banned_words": [
+    "unlock",
+    "game-changer",
+    "delve",
+    "elevate"
+  ],
   "cta_default": "Follow for more",
   "colors": {
     "primary": "#111111",
@@ -36,7 +45,7 @@
     "speed": 1.05
   },
   "higgsfield": {
-    "mode": "manual",
+    "mode": "auto",
     "api": {
       "base_url": "https://platform.higgsfield.ai",
       "image_to_video_path": "",
@@ -46,5 +55,9 @@
       "poll_seconds": 6,
       "timeout_seconds": 600
     }
+  },
+  "delivery": {
+    "git_push": true,
+    "branch": ""
   }
 }

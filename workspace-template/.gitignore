@@ -1,0 +1,4 @@
+.env
+reels/*/build/
+reels/*/voice/*.wav
+.DS_Store

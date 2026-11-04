@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "reel-studio": {
+      "source": { "source": "github", "repo": "YOUR-GITHUB-USER/reel-studio" }
+    }
+  },
+  "enabledPlugins": {
+    "reel-studio@reel-studio": true
+  }
+}

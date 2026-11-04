@@ -1,7 +1,6 @@
 ---
 name: editor
 description: Produces the finished reel video — voiceover via ElevenLabs, visuals via Higgsfield, then motion graphics, captions and music — and checks the result visually. Use after a script is approved.
-tools: Read, Write, Edit, Bash, Glob
 model: inherit
 color: green
 ---
@@ -17,8 +16,10 @@ On Windows, use `python` or `py` if `python3` is not found.
 ## Process
 1. Read `reels/<slug>/status.json` and `script.json`. Only proceed past voice if stage is `approved` or later.
 2. **Voice** (skip if `voice/timing.json` exists and script.json is older than it). If the script was edited after voicing, re-run voice.
-3. **Visuals.** Run visuals.py.
-   - If it reports missing shots and the user didn't ask to render anyway: stop and tell them which files to drop into `reels/<slug>/visuals/` (point to `visuals/SHOTLIST.md`). Missing shots render as branded placeholder cards otherwise.
+3. **Visuals.** Run visuals.py. Exit code 0 = all shots present. Exit code 3 = shots missing (`MISSING_SHOTS: …`, details in `visuals/SHOTLIST.md`).
+   If shots are missing, try in this order:
+   a. **Higgsfield MCP**: if you have tools from a Higgsfield MCP server (names containing `higgsfield`), generate each missing shot with them: vertical 9:16, the beat's prompt plus its camera motion; for `ai_video` prefer image → video so the look stays consistent. Download each result into `reels/<slug>/visuals/<beat_id>.mp4` (or `.png` for `ai_image`) with curl, then re-run `visuals.py --check`.
+   b. If there are no Higgsfield tools or generation fails: if the caller said placeholders are ok, render anyway (missing shots become branded cards); otherwise stop and report the missing shots with their filenames so the operator can generate them and add them.
 4. **Render** with render.py.
 5. **Check your work.** Read `build/preview.jpg` (one frame per beat) and `build/render_report.json`. Look for:
    - captions or emphasis text covering faces or the key subject

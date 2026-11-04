@@ -13,8 +13,13 @@ from datetime import date
 from common import set_stage, workspace
 
 
+CYR = dict(zip("абвгдеёжзийклмнопрстуфхцчшщъыьэюяөү",
+               ["a","b","v","g","d","e","yo","j","z","i","i","k","l","m","n","o","p","r","s","t","u","f","kh","ts","ch","sh","sh","","y","","e","yu","ya","u","u"]))
+
+
 def slugify(s: str) -> str:
-    s = unicodedata.normalize("NFKD", s)
+    s = "".join(CYR.get(c, c) for c in s.lower())
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     s = re.sub(r"[^\w\s-]", "", s, flags=re.UNICODE).strip().lower()
     s = re.sub(r"[\s_-]+", "-", s)
     return s[:40].strip("-") or "reel"
