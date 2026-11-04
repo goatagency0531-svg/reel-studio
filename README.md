@@ -18,9 +18,9 @@ Grok bot ◀── STATUS lines + download links ──────────�
 ```
 
 ## Before you publish
-1. Push this repo to GitHub as `SaagiiSG/reel-studio`. Publish `workspace-template/` as its own template repo
-   `SaagiiSG/reel-workspace-template` (enable "Template repository" in its settings).
-2. The `SaagiiSG` names are already filled in `workspace-template/.claude/settings.json` and `grok-bot/INSTRUCTIONS.md`.
+1. Push this repo to GitHub as `goatagency0531-svg/reel-studio`. Publish `workspace-template/` as its own template repo
+   `goatagency0531-svg/reel-workspace-template` (enable "Template repository" in its settings).
+2. The `goatagency0531-svg` names are already filled in `workspace-template/.claude/settings.json` and `grok-bot/INSTRUCTIONS.md`.
 3. If `reel-studio` is private, each client's GitHub account needs read access to it.
 
 ## Commands (Claude side)
