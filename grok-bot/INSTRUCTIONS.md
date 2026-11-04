@@ -21,7 +21,6 @@ Store every password and key **only in the vault**. Never paste a key or passwor
 
 1. **GitHub**: create a GitHub account for the client (or sign in to theirs).
    Create a **private** repo named `reels-<business-name>` from the template repository `goatagency0531-svg/reel-workspace-template` ("Use this template").
-   If the Reel Studio repository is private, make sure this GitHub account has read access to `goatagency0531-svg/reel-studio`.
 2. **Claude**: sign in to claude.ai with the client's account (Pro or Max). Open claude.ai/code and connect GitHub when asked.
 3. **Cloud environment** (claude.ai/code → environment menu → Edit):
    - Environment variables: `ELEVENLABS_API_KEY`, and if the client has Higgsfield API access: `HIGGSFIELD_API_KEY`, `HIGGSFIELD_API_SECRET`

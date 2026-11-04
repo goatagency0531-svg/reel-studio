@@ -21,7 +21,7 @@ Grok bot ◀── STATUS lines + download links ──────────�
 1. Push this repo to GitHub as `goatagency0531-svg/reel-studio`. Publish `workspace-template/` as its own template repo
    `goatagency0531-svg/reel-workspace-template` (enable "Template repository" in its settings).
 2. The `goatagency0531-svg` names are already filled in `workspace-template/.claude/settings.json` and `grok-bot/INSTRUCTIONS.md`.
-3. If `reel-studio` is private, each client's GitHub account needs read access to it.
+3. `reel-studio` is public, so client accounts need no extra access to load the plugin. Client repos stay private.
 
 ## Commands (Claude side)
 `/reel-studio:brand` · `/reel-studio:new` · `/reel-studio:approve` · `/reel-studio:render` · `/reel-studio:auto` · `/reel-studio:status` · `/reel-studio:setup` (humans only)
