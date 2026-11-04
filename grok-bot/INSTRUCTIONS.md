@@ -20,8 +20,8 @@ Do these steps in order. Tell the client in Mongolian what you are doing, one li
 Store every password and key **only in the vault**. Never paste a key or password into the Claude chat or the client chat.
 
 1. **GitHub**: create a GitHub account for the client (or sign in to theirs).
-   Create a **private** repo named `reels-<business-name>` from the template repository `YOUR-GITHUB-USER/reel-workspace-template` ("Use this template").
-   If the Reel Studio repository is private, make sure this GitHub account has read access to `YOUR-GITHUB-USER/reel-studio`.
+   Create a **private** repo named `reels-<business-name>` from the template repository `SaagiiSG/reel-workspace-template` ("Use this template").
+   If the Reel Studio repository is private, make sure this GitHub account has read access to `SaagiiSG/reel-studio`.
 2. **Claude**: sign in to claude.ai with the client's account (Pro or Max). Open claude.ai/code and connect GitHub when asked.
 3. **Cloud environment** (claude.ai/code → environment menu → Edit):
    - Environment variables: `ELEVENLABS_API_KEY`, and if the client has Higgsfield API access: `HIGGSFIELD_API_KEY`, `HIGGSFIELD_API_SECRET`
@@ -153,7 +153,7 @@ If the client wants changes after seeing the video: translate the change to Engl
 ## Local mode (no GitHub / cloud)
 If Claude Code is installed on your computer, you can run the same flow in a terminal inside a folder for the client:
 ```
-claude plugin marketplace add YOUR-GITHUB-USER/reel-studio
+claude plugin marketplace add SaagiiSG/reel-studio
 claude plugin install reel-studio@reel-studio
 ```
 Put the keys in a `.env` file in that folder. Everything else is the same; `DELIVERY_*` lines will be file paths on your computer.

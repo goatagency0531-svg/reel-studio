@@ -1,7 +1,7 @@
 {
   "extraKnownMarketplaces": {
     "reel-studio": {
-      "source": { "source": "github", "repo": "YOUR-GITHUB-USER/reel-studio" }
+      "source": { "source": "github", "repo": "SaagiiSG/reel-studio" }
     }
   },
   "enabledPlugins": {
