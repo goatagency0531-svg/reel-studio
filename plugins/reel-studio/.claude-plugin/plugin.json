@@ -1,0 +1,19 @@
+{
+  "name": "reel-studio",
+  "displayName": "Reel Studio",
+  "version": "0.1.0",
+  "description": "An AI Instagram Reels team: scriptwriter, reviewer, editor (ElevenLabs voice, Higgsfield visuals, motion graphics) and poster designer, in one workspace.",
+  "author": {
+    "name": "GOAT Agency"
+  },
+  "keywords": [
+    "instagram",
+    "reels",
+    "video",
+    "elevenlabs",
+    "higgsfield",
+    "content"
+  ],
+  "license": "LicenseRef-Proprietary",
+  "icon": "./.claude-plugin/icon.png"
+}

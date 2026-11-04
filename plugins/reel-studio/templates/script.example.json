@@ -1,0 +1,29 @@
+{
+  "title": "Why your reels die in 2 seconds",
+  "language": "en",
+  "hook_formula": "callout + consequence",
+  "target_seconds": 30,
+  "beats": [
+    {
+      "id": "b1",
+      "voiceover": "Your reels are dying in the first two seconds, and it's not the algorithm.",
+      "on_screen": "IT'S NOT THE ALGORITHM",
+      "visual": {"type": "ai_video", "prompt": "Close-up of a thumb rapidly scrolling a phone feed, neon reflections, shallow depth of field, vertical 9:16", "motion": "slow push in"}
+    },
+    {
+      "id": "b2",
+      "voiceover": "You open with a greeting. Nobody cares who you are yet.",
+      "on_screen": "SKIP THE HELLO",
+      "visual": {"type": "ai_image", "prompt": "Person waving at camera in an empty room, cinematic lighting, vertical 9:16"}
+    },
+    {
+      "id": "b3",
+      "voiceover": "Open with the result instead. Follow for the next one.",
+      "on_screen": "LEAD WITH THE RESULT",
+      "visual": {"type": "text_card", "prompt": ""}
+    }
+  ],
+  "caption": "Your first line decides everything. Save this before your next post.",
+  "hashtags": ["#reels", "#contentcreator"],
+  "poster": {"headline": "Your reels die in 2 seconds", "subline": "Here's the fix"}
+}

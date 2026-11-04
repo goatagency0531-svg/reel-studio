@@ -1,0 +1,14 @@
+{
+  "name": "reel-studio",
+  "description": "Reel Studio: an AI Instagram Reels production team for Claude Code.",
+  "owner": {
+    "name": "GOAT Agency"
+  },
+  "plugins": [
+    {
+      "name": "reel-studio",
+      "source": "./plugins/reel-studio",
+      "description": "An AI Instagram Reels team in Claude Code: scriptwriter, reviewer, editor (ElevenLabs voice + Higgsfield visuals + motion graphics) and poster designer."
+    }
+  ]
+}

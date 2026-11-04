@@ -1,0 +1,8 @@
+{
+  "name": "bold",
+  "description": "Big centered word-by-word captions, accent-colored active word, pop-in emphasis cards, punch zooms.",
+  "caption": {"font_size": 92, "words_per_group": 3, "position_y": 1180, "uppercase": true, "outline": 6, "shadow": 0, "highlight_active_word": true, "pop_in": true},
+  "emphasis": {"enabled": true, "font_size": 128, "position_y": 560, "box": true, "duration": 1.6},
+  "motion": {"image_zoom": 1.18, "video_punch_zoom": 1.06, "transition": "fade", "transition_seconds": 0.18},
+  "progress_bar": {"enabled": true, "height": 10}
+}

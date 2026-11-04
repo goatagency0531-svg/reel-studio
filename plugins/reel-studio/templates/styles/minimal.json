@@ -1,0 +1,8 @@
+{
+  "name": "minimal",
+  "description": "Smaller lower-third sentence captions, no emphasis boxes, slow drift motion.",
+  "caption": {"font_size": 64, "words_per_group": 6, "position_y": 1420, "uppercase": false, "outline": 3, "shadow": 2, "highlight_active_word": false, "pop_in": false},
+  "emphasis": {"enabled": false, "font_size": 96, "position_y": 600, "box": false, "duration": 1.4},
+  "motion": {"image_zoom": 1.08, "video_punch_zoom": 1.0, "transition": "fade", "transition_seconds": 0.3},
+  "progress_bar": {"enabled": false, "height": 6}
+}

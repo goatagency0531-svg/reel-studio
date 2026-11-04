@@ -1,0 +1,50 @@
+{
+  "brand_name": "Your Brand",
+  "handle": "@yourbrand",
+  "language": "en",
+  "audience": "Who you talk to, in one sentence.",
+  "offer": "What you sell or want people to do.",
+  "tone": ["direct", "warm", "no fluff"],
+  "banned_words": ["unlock", "game-changer", "delve", "elevate"],
+  "cta_default": "Follow for more",
+  "colors": {
+    "primary": "#111111",
+    "accent": "#FFD400",
+    "text": "#FFFFFF",
+    "background": "#0E0E10"
+  },
+  "fonts": {
+    "family": "Inter",
+    "bold_file": "",
+    "regular_file": ""
+  },
+  "logo_file": "brand/logo.png",
+  "music_file": "brand/music.mp3",
+  "music_volume": 0.12,
+  "style": "bold",
+  "reel": {
+    "target_seconds": 35,
+    "max_seconds": 60,
+    "words_per_second": 2.6
+  },
+  "elevenlabs": {
+    "voice_id": "",
+    "model_id": "eleven_multilingual_v2",
+    "stability": 0.45,
+    "similarity_boost": 0.8,
+    "style": 0.2,
+    "speed": 1.05
+  },
+  "higgsfield": {
+    "mode": "manual",
+    "api": {
+      "base_url": "https://platform.higgsfield.ai",
+      "image_to_video_path": "",
+      "text_to_image_path": "",
+      "auth_header": "Authorization",
+      "auth_format": "Key {HIGGSFIELD_API_KEY}:{HIGGSFIELD_API_SECRET}",
+      "poll_seconds": 6,
+      "timeout_seconds": 600
+    }
+  }
+}
